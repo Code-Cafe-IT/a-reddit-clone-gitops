@@ -16,7 +16,7 @@ pipeline{
          }
          stage("Update the Deployment Tags Image"){
             steps{
-                //Tìm kiếm bất kỳ ký tự nào bao gồm ${APP_NAME} về sau thay thế bbằng /${APP_NAME}:${IMAGE_TAG}
+                //Tìm kiếm bất kỳ ký tự nào bao gồm ${APP_NAME} về sau thay thế bằng /${APP_NAME}:${IMAGE_TAG}
                 sh """
                     cat deployment.yaml
                     sed -i 's/${APP_NAME}:.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml 
